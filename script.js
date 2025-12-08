@@ -23,10 +23,23 @@ document.addEventListener('DOMContentLoaded', function() {
 
     if (menuToggle) {
         menuToggle.addEventListener('click', () => {
-            mobileNav.classList.toggle('active');
-            const icon = menuToggle.querySelector('i');
-            icon.classList.toggle('fa-bars');
-            icon.classList.toggle('fa-xmark');
+            // A. Toggle the 'active' class on the menu
+    // This opens it if closed, and closes it if open
+    mobileNav.classList.toggle('active');
+
+    // B. Toggle the Icon (Optional but recommended)
+    // Switches from Hamburger (bars) to X (close)
+    const icon = menuToggle.querySelector('i');
+    
+    if (mobileNav.classList.contains('active')) {
+        // If menu is OPEN, show 'X'
+        icon.classList.remove('fa-bars');
+        icon.classList.add('fa-xmark'); 
+    } else {
+        // If menu is CLOSED, show 'Bars'
+        icon.classList.remove('fa-xmark');
+        icon.classList.add('fa-bars');
+    }
         });
     }
 

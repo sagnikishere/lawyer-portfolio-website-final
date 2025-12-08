@@ -574,6 +574,12 @@ header.scrolled {
     color: var(--text-grey);
     font-size: 0.95rem;
 }
+.service-section {
+  background: #ffffff;
+  text-align: center;
+  padding: 60px 20px;
+  font-family: "Georgia", serif;
+}
 
 /* =========== TESTIMONIALS =========== */
 #testimonials {
