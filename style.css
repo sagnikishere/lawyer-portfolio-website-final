@@ -662,21 +662,7 @@ header.scrolled {
     letter-spacing: 1px;
 }
 
-/* =========== MAP & FOOTER =========== */
-#maps {
-    display: flex;
-    flex-direction: column;
-    border-top: 5px solid var(--primary-gold);
-}
-
-.maps-embed iframe {
-    filter: grayscale(80%) contrast(1.2); /* Makes map look more professional */
-    transition: filter 0.5s ease;
-}
-
-.maps-embed:hover iframe {
-    filter: grayscale(0%) contrast(1); /* Full color on hover */
-}
+/* =========== FOOTER =========== */
 
 footer {
     background: #0a0f1c; /* Even darker navy */
@@ -825,11 +811,82 @@ footer {
 
     .experience-circle { margin: 0 0 30px 0; }
     
-    #maps { flex-direction: row; }
-    .maps-embed { flex: 1; }
+    /* ADDED THIS LINE to fix Map layout on Desktop */
+    .cute-maps-wrapper {
+        flex-direction: row;
+    }
+    
+    .cute-map-box {
+        width: 45%; 
+    }
 }
 
 @media (min-width: 992px) {
     .desktop-nav { display: flex; }
     .menu-toggle { display: none; }
+}
+
+
+/* ============ ADDED MAP STYLES ============ */
+.maps-section {
+    padding: 80px 0;
+    background: var(--white);
+    text-align: center;
+}
+
+.cute-maps-wrapper {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-direction: column; /* Default for mobile */
+    align-items: center;
+}
+
+.cute-map-box {
+    background: #fff;
+    border-radius: 20px;
+    padding: 20px;
+    width: 100%;
+    max-width: 500px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+    border: 1px solid #f0f0f0;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cute-map-box:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(212, 175, 55, 0.2);
+    border-color: var(--primary-gold);
+}
+
+.map-label {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    color: var(--primary-dark);
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.map-label i {
+    color: var(--primary-gold);
+}
+
+.map-frame {
+    border-radius: 15px;
+    overflow: hidden;
+    border: 2px solid #eee;
+    height: 250px;
+}
+
+.address-text {
+    margin-top: 15px;
+    font-size: 0.95rem;
+    color: var(--text-grey);
+    line-height: 1.5;
+    text-align: left;
+    padding-left: 10px;
 }
